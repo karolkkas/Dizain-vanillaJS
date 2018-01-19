@@ -1,0 +1,92 @@
+/* ============================================ Buttons ============================================ */
+/* Hamburger */
+.nav__toggle {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    right:5%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    display: none;
+    border:0;
+    background:transparent;
+    z-index: 9;
+    
+    &:focus {
+        outline: 0;
+    }
+}
+
+.hamburger {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    background-color: $font-color-dark;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
+    transition: .5s ease-in-out;
+}
+
+.hamburger::after, .hamburger::before {
+    content: '';
+    @extend .hamburger;
+}
+
+.hamburger::after {
+    top:330%;
+}
+
+.hamburger::before {
+    top: -250%;
+}
+
+.nav__toggle.open .hamburger {
+    background-color: transparent;
+    box-shadow: 0 2px 3px transparent;
+}
+
+.nav__toggle.open .hamburger::after {
+    transform: rotate(45deg);
+    top:0;
+    left:0;
+    background-color: $font-color-dark;
+}
+
+.nav__toggle.open .hamburger::before {
+    transform: rotate(-45deg);
+    top:0;
+    left:0;
+    background-color: $font-color-dark;
+}
+
+/* ====== Arrow =======*/
+.arrow-up {
+    display:block;
+    position: fixed;
+    bottom:3rem;
+    right:3rem;
+    font-size: 5rem;
+    z-index: 7;
+    text-shadow:0px 0px 10px $font-color-dark;
+    opacity:0;
+    visibility: hidden;
+    transition: .5s;
+    
+    &--visible {
+        opacity:1;
+        visibility: visible;
+    }
+    
+    & .fa {
+    color: $font-color-light;
+    
+    &:hover {
+        color: $bg-light;
+        cursor: pointer;
+    }
+    }
+}
+

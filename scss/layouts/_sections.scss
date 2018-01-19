@@ -1,0 +1,234 @@
+/* ============================================ Articles ============================================ */
+/* General settings of sections */
+
+.article__wrapper {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 5px $bg-light;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba($bg-secondary,0.1);
+}
+
+.overlay-dark {
+    width: 100%;
+    height: 100%;
+    background: rgba($bg-primary,0.5);
+}
+
+.bg-light {
+    background: #ffffff;
+    box-shadow: 0 4px 5px rgba($bg-primary, 0.2);
+    position: relative;
+}
+
+.bg-light-2 {
+    background: $bg-light;
+}
+
+.bg-parallax {
+    background: transparent;
+}
+
+.bg-dark {
+    @include add-background($bg-primary);
+}
+
+.content-set {
+    padding: 80px 40px 60px 40px;
+    text-align: justify;
+}
+
+/* ==== About Section ==== */
+
+#about .container {
+    width: 100%;
+    display:flex;
+}
+
+.about__image {
+    flex:1 0 50%;
+    margin:0;
+    background: url('../img/studio.jpg') no-repeat center;
+    background-size: cover;
+
+    
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ==== Team Section ==== */
+
+.bg-prlx-2 {
+    background: url('../img/about-section.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+.team__members {
+    width: 100%;
+    height: auto;
+    padding:40px 0;
+    
+    .member__flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+    
+    .flex--ceo {
+        flex:1;
+    }
+    
+    .flex--emp {
+        flex:2;
+    }
+    
+    .member {
+        margin:0;
+        text-align: center;
+        
+        .member__img {
+            width: 12.5rem;
+            height: 12.5rem;
+            border-radius:50%;
+            z-index: 3;
+            position: relative;
+            border:5px solid $bg-secondary;
+            
+            &.img-ceo {
+                border:5px solid $bg-primary;
+            }
+        }
+        
+        .member__text {
+            width: 20rem;
+            height: auto;
+            background: rgba($bg-primary, 0.8);
+            font-size: 1.2rem;
+            color: $font-color-light;
+            padding: 3.4rem 0.63rem 0.63rem 0.63rem;
+            margin-bottom: 20px;
+            position: relative;
+            top: -4rem;
+            z-index: 0;
+            
+            &.text-ceo {
+                background: rgba($bg-secondary, 0.8);
+                color: $font-color-dark;
+                
+            }
+        }
+    }
+}
+
+/* ==== Tarrfi Section ==== */
+
+#tarrif.article__wrapper {
+    background: url('../img/bg-tarrif2.jpeg') no-repeat center fixed;
+    background-size: cover;
+}
+
+/* ==== Contact Section ==== */
+
+.contact {
+    &__content {
+    display:flex;
+    width: 100%;
+    padding: 40px 0px;
+    flex-wrap: wrap;
+    justify-content: space-around;    
+    }
+
+    &__social-media-box {
+        display: flex;
+        justify-content: space-around;
+
+        .fa {
+            font-size: 3rem;
+        }
+    }
+
+    &__address {
+        width: 18rem;
+    }
+
+    &__address-item {
+        margin-bottom: 1rem;
+    
+        a, p {
+            line-height: 3.5rem;
+            font-size: 1rem;
+        }
+
+        .fa {
+            color:$font-color-dark;
+            border:1px solid $bg-dark;
+            border-radius: 50%;
+            width: 3.5rem;
+            height: 3.5rem;
+            line-height: 3.5rem;
+            text-align: center;
+            margin-right: 0.8rem;
+            float: left;
+        }
+    }
+}
+
+.day {
+    width: 6rem;
+    height: 6rem;
+    border:1px solid;
+    border-radius: 50%;
+    margin: 0 10px 10px 0;
+    &__box {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }   
+    &__name {
+        width: 100%;
+        text-align: center;
+        border-bottom:1px solid #000000;
+        height: 3rem;
+        line-height: 3rem;
+        font-weight: 700;
+    }     
+    &__hours {
+        @extend .day__name;
+        border:0;
+        font-size: 0.9rem;
+        line-height: 2rem;
+        
+        &:last-child {
+            border-top: 1px solid #ffffff;
+        }
+    }
+}
+
+.opened {
+    background: $bg-secondary;
+}
+
+.closed {
+    @include add-background($bg-primary);
+}
+
+.contact__address, .contact__social-media, .contact__hours {
+    margin-bottom: 30px;
+}
+
+.maps {
+    width: 100%;
+    height: 30rem ;
+}
+
+a[href^=tel] {
+    font-family: $secondary-ff;
+}

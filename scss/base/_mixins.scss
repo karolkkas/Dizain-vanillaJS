@@ -1,0 +1,56 @@
+/* Mixins */
+
+@mixin add-border($size: 1px, $color:$primary-color, $position: 'all') {
+    @if $position == 'all' {
+        border: $size solid $color;
+    } @else if $position == 'top' {
+        border-top: $size solid $color;
+    } @else if $position == 'bottom' {
+        border-bottom: $size solid $color;
+    } @else if $position == 'right' {
+        border-right: $size solid $color;
+    } @else if $position == 'left' {
+        border-left: $size solid $color;
+    } @else if $position == 'top-bottom' {
+        border-top: $size solid $color;
+        border-bottom: $size solid $color;
+    } @else if $position == 'left-right' {
+        border-left: $size solid $color;
+        border-right: $size solid $color;
+    } @else if $position == 'left-top' {
+        border-top: $size solid $color;
+        border-left: $size solid $color;
+    } @else if $position == 'top-right' {
+        border-top: $size solid $color;
+        border-right: $size solid $color;
+    } @else if $position == 'left-bottom' {
+        border-left: $size solid $color;
+        border-bottom: $size solid $color;
+    } @else if $position == 'bottom-right' {
+        border-bottom: $size solid $color;
+        border-right: $size solid $color;
+    } 
+    
+}
+
+@mixin add-background($color) {
+    background:$color;
+    @if $color == $bg-primary {
+        color: $font-color-light;
+    } @else if $color == $bg-secondary {
+        color: $font-color-dark;
+    }
+}
+
+@mixin fa-size($font-size) {
+    @for $i from 2 through 6 {
+        .fa-#{$i} {font-size:$font-size -(2*0.3rem)+($i*0.3rem) !important;}
+    }
+}
+
+@mixin skew($deg) {
+    -webkit-transform: skew($deg);
+    -moz-transform: skew($deg);
+    -o-transform: skew($deg);
+    transform: skewX($deg);
+}

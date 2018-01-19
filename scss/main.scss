@@ -1,0 +1,27 @@
+/*
+    Dizain - Atelier Fryzjerski
+    Author: Karol Kasprzak NAZWA
+    Version: 0.0.1
+*/
+
+/* BASE - Base styles, mixins, variables, etc..*/
+
+//@import "base/reset";
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/base";
+
+
+/* MODULES - Indyvidual site components*/
+@import "modules/typography";
+@import "modules/buttons";
+@import "modules/components";
+
+
+/* LAYOUTS - Page layout styles */
+@import "layouts/nav";
+@import "layouts/sections";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/mobile";
