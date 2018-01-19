@@ -1,0 +1,48 @@
+/* ============================================ Typography ============================================ */
+
+/* Icons */
+@include fa-size(1.6rem);
+
+/* Headings*/
+.heading-primary {
+    border-radius: 50%;
+    line-height: 6.25rem;
+    height: 9rem;
+    padding:0 1.25rem;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: rgba(#000,0.9);
+    font-weight: 700;
+    z-index: 0;
+    animation: fadeIn 1.5s ease-out 2s backwards;
+    &--main {
+        color: #ffffff;
+        font-weight: 700;
+        margin-bottom:0;
+        font-size: 3rem;
+        line-height: 9.37rem;
+        font-family:$base-ff;
+    }
+}
+
+.heading-secondary {
+    display: inline-block;
+    @include add-border(1px, $font-color-light, bottom);
+    font-size: $h-prim-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $font-color-light;
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-family:$base-ff;
+    
+}
+
+.heading-tertiary {
+    color: $font-color-light;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    flex:1 0 100%;
+}

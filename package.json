@@ -1,0 +1,40 @@
+{
+  "name": "dizain",
+  "version": "1.0.0",
+  "description": "studio stylizacji włosów DIZIAN",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.5",
+    "del": "^3.0.0",
+    "eslint": "^4.15.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.3",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^2.0.0",
+    "run-sequence": "^2.2.1"
+  },
+  "scripts": {
+    "babel": "babel src/js/script.js --watch --out-file src/js/script-compiled.js"
+  },
+  "keywords": [
+    "fryzjer",
+    "meski",
+    "damski",
+    "łęczna",
+    "dizain"
+  ],
+  "author": "Karol Kasprzak",
+  "license": "ISC"
+}

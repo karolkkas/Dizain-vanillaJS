@@ -1,0 +1,43 @@
+
+body {
+    font-family: $secondary-ff;
+    font-size: $base-font-size;
+    line-height: 1.8rem;
+    color:$font-color-dark;
+    font-size: 62.5%;
+    background: #fff;
+}
+
+a {
+    color:$font-color-dark;
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: $base-ff;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.container {
+    width: 90%;
+    overflow: hidden;
+    margin:0 auto;
+    height: 100%;
+}
+
+.visibility-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+.menu-opened {
+    overflow: hidden;
+}
