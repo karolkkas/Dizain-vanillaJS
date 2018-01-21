@@ -5,9 +5,8 @@ function query(elem) {
 }
 
 function debounce(func) {
-    var wait = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 10;
-    var immediate = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
-
+    var wait = 10;
+    var immediate = true;
     var timeout;
     return function () {
         var context = this,
@@ -24,7 +23,7 @@ function debounce(func) {
 };
 
 function changeClassOnScroll() {
-    var location = window.pageYOffset;
+    var location = window.pageYOffset || document.body.scrollTop;
     var nav = document.querySelector('nav');
     var arrowUp = document.querySelector('.arrow-up');
 
@@ -45,7 +44,7 @@ function removeClassFromSibling(selector, className) {
 }
 
 function switchActiveLink() {
-    var offsetTop = window.pageYOffset;
+    var offsetTop = window.pageYOffset || document.body.scrollTop;
     var links = document.querySelectorAll('.nav__menu-bar a');
     [].forEach.call(links, function (link) {
         var sectionOffset = document.querySelector(link.hash).offsetTop - 150;
