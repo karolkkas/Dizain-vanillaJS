@@ -2,7 +2,9 @@ function query(elem) {
     return document.querySelector(elem);
 }
 
-function debounce(func, wait = 10, immediate = true) {
+function debounce(func) {
+    var wait = 10;
+    var immediate = true;
     var timeout;
     return function() {
         var context = this, args = arguments;
@@ -17,8 +19,8 @@ function debounce(func, wait = 10, immediate = true) {
     };
 };
 
-function changeClassOnScroll(){
-    const location = window.pageYOffset;
+function changeClassOnScroll() {
+    const location = window.pageYOffset || document.body.scrollTop;
     const nav = document.querySelector('nav');
     const arrowUp = document.querySelector('.arrow-up');
     
@@ -39,7 +41,7 @@ function removeClassFromSibling(selector, className) {
 }
 
 function switchActiveLink() {
-    const offsetTop = window.pageYOffset;
+    const offsetTop = window.pageYOffset || document.body.scrollTop;
     const links = document.querySelectorAll('.nav__menu-bar a');
     [].forEach.call(links, function(link) {
         let sectionOffset = document.querySelector(link.hash).offsetTop - 150;            
@@ -66,7 +68,7 @@ query('.nav__toggle').addEventListener('click', function(){
 });
 
 const aLinks = document.querySelectorAll('.nav__menu-bar li a, .nav__logo a')
-Array.prototype.slice.call(aLinks).forEach((link) => {
+Array.prototype.slice.call(aLinks).forEach(function(link) {
     link.addEventListener('click', function() {
         query('.nav__menu-bar').classList.remove('collapse'),
         query('.nav__toggle').classList.remove('open'),
