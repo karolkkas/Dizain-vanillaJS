@@ -76,7 +76,29 @@ Array.prototype.slice.call(aLinks).forEach(function(link) {
     })
 });
 
-const scroll = new SmoothScroll('a[href*="#"]', {
+const scroll = new SmoothScroll();
+
+const smoothScrollWithoutHash = function (selector, settings) {
+	/**
+	 * If smooth scroll element clicked, animate scroll
+	 */
+	const clickHandler = function (event) {
+		let toggle = event.target.closest( selector );
+		console.log(toggle);
+		if ( !toggle || toggle.tagName.toLowerCase() !== 'a' ) return;
+		console.log(toggle.hash);
+		let anchor = document.querySelector( toggle.hash );
+		if ( !anchor ) return;
+
+		event.preventDefault(); // Prevent default click event
+		scroll.animateScroll( anchor, toggle, settings || {} ); // Animate scroll
+	};
+
+	window.addEventListener('click', clickHandler, false );
+};
+
+// Run our function
+smoothScrollWithoutHash( 'a[href*="#"]', {
     speed: 1000,
     offset: 100
-});
+} );
